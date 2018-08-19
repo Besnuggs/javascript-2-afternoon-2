@@ -127,8 +127,15 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
-
+let divider = (numbersArray) => {
+evens = numbersArray.filter(function(number){
+  return number%2 === 0;
+});
+odds = numbersArray.filter(function(number){
+  return number%2 === 1;
+})
+return [evens,odds]
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -148,7 +155,13 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+let finder = array => {
+  let randomNum = getRandomArbitrary();
+  return array.indexOf(randomNum) === -1 ? false : true
+  }
+
+
+
 
 
 
@@ -177,7 +190,20 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+let removeItem = (array,item) =>{
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] === item) {
+     array.splice(array[i], 1);
+    }
+  } if(array){
+  return array;
+  }
+}
+
+let addItem = (myGroceryList, item) =>{
+newGroceryList = [];
+
+}
 
 
 
@@ -187,7 +213,15 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+let maker = () =>{
+  let array = [];
+  for(let i = 0; i < 215; i++){
+    array.push(i + 1)
+  }
+return array;
+}
+
+console.log(maker())
 
 
 
@@ -203,7 +237,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(arr){
+  var newNums = [];
+  for (var i = 0; i<arr.length; i++){
+    newNums.push(Number(arr[i]));
+    newNums[i] += 10;
+  }
+  return newNums;
+}
+
+addTen(numbers);
 
 
 
@@ -228,7 +271,13 @@ for(var i = 0; i < num2; i++){
   Return the array which is longest.
 */
 
-//Code Here
+let longer = (arr1, arr2) =>{
+  if (arr1.length > arr2.length){
+    return arr1
+  } else {
+    return arr2
+  }
+} 
 
 
 
@@ -240,7 +289,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+let both = (arr1,arr2) =>{
+  let newArr = []
+  for(let i = 0; i < arr1.length; i++){
+    for(let j = 0; j < arr2.length; j++){
+      if (arr1[i] === arr2[j]) {
+        newArr.push(arr1[i])
+      }
+    }
+  }
+  return newArr
+}
 
 
 
@@ -280,7 +339,7 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt)
 
 
 
@@ -289,7 +348,7 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+let cahlansanctuary = devMountainEmployees.splice(1,1)
 
 
 
@@ -301,7 +360,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = [];
 
 
 
@@ -310,6 +369,18 @@ var colt = {
 
   Include the following user1 object as one of the objects in your array.
 */
+var user2 = {
+  name: 'Patty McGinnis',
+  email: 'pattymcginnis33@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteRope'
+};
+var user3 = {
+  name: 'Peter McGinnis',
+  email: 'petermcginnis33@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniteDupe'
+};
 
 // Do not edit the code below.
 var user1 = {
@@ -320,9 +391,7 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
-
-
+users.push(user1,user2,user3)
 
 /*
   Now you have a very common data structure. 
@@ -333,8 +402,16 @@ var user1 = {
   Loop through your array of objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
   Once you find the particular index he's located in, delete him from the array.
 */
+let deleteTyler = () =>{
+for (let i = 0; i< users.length; i++){
+ if (users[i].email === "tylermcginnis33@gmail.com"){
+    users.splice[i,1]
+ }
+}
+}
+deleteTyler();
+users;
 
-//Code Here
 
 
 
