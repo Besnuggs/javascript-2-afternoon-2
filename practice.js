@@ -191,6 +191,8 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 let removeItem = (array,item) =>{
+  if( item === null || item === undefined)
+return [];
   for (var i = 0; i < array.length; i++) {
     if (array[i] === item) {
      array.splice(array[i], 1);
@@ -200,9 +202,13 @@ let removeItem = (array,item) =>{
   }
 }
 
-let addItem = (myGroceryList, item) =>{
-newGroceryList = [];
-
+let addItem = (array, item) =>{
+  if( item === null || item === undefined)
+  return []
+  else {
+  array.push(item)
+}
+return array;
 }
 
 
@@ -405,10 +411,11 @@ users.push(user1,user2,user3)
 let deleteTyler = () =>{
 for (let i = 0; i< users.length; i++){
  if (users[i].email === "tylermcginnis33@gmail.com"){
-    users.splice[i,1]
+    users.splice([i],1)
  }
 }
 }
+
 deleteTyler();
 users;
 
